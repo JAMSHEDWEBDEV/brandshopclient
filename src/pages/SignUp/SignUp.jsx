@@ -19,6 +19,7 @@ const SignUp = () => {
             if (result) {
                 swal("success!", "Your Registration successful!", "success");
               }
+             e.target.reset(); 
         })
         .catch(error =>{
             if (error) {
@@ -29,7 +30,7 @@ const SignUp = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero py-8 bg-base-200">
             <div>
                 <div className="text-center mb-7">
                     <h1 className="text-5xl font-bold">SignUp now!</h1>

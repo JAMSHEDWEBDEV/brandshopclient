@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import swal from "sweetalert";
 
 const SignIn = () => {
-    const {signInUser} = useContext(AuthContext);
+    const {signInUser,signInWithGoogle} = useContext(AuthContext);
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -18,6 +21,8 @@ const SignIn = () => {
             if (result) {
                 swal("success!", "You successfully login here,Thank You!", "success");
               }
+             e.target.reset();
+             navigate(location?.state ? location.state : '/'); 
               
         })
         .catch(error =>{
@@ -25,10 +30,22 @@ const SignIn = () => {
                 swal("Oops!", "This Email and Password does not match !", "error");
               }
         })
+
     }
 
+    const handleSignInGoogle = () =>{
+        signInWithGoogle()
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.error(error);
+        })
+    }
+
+
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero py-8 bg-base-200">
             <div>
                 <div className="text-center mb-7">
                     <h1 className="text-5xl font-bold">SignIn now!</h1>
@@ -51,11 +68,16 @@ const SignIn = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">SignIn</button>
+                            <button className="btn btn-primary font-bold">SignIn</button>
                         </div>
                         <div>
                             <p>New User ? Please <Link to="/signUp" className="text-2xl text-blue-700 font-bold ml-2">SignUp</Link> </p>
                         </div>
+                        <p className="text-xl text-center font-bold">OR</p>
+                        <p>SignIn With 
+                            <Link><button
+                            onClick={handleSignInGoogle} 
+                            className="btn btn-primary ml-3 font-bold">Google</button></Link> </p>
                     </form>
                 </div>
             </div>
