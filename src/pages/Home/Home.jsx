@@ -1,6 +1,7 @@
 import Banner from "../../components/Header/Banner/Banner";
 import { MdLocalShipping,MdAddCall } from "react-icons/md";
 import { AiTwotoneLock } from "react-icons/ai";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
     return (
@@ -35,6 +36,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
