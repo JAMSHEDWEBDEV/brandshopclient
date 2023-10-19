@@ -33,7 +33,7 @@ const Navbar = () => {
                         {Navlinks}
                     </ul>
                 </div>
-                <a className="normal-case text-2xl font-bold">Grocerry<span className="text-blue-700">Shop</span></a>
+                <a className="normal-case text-2xl font-bold">Grocerry<span className="text-green-600">Shop</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -49,7 +49,7 @@ const Navbar = () => {
                             className="btn text-blue-700 font-bold">SignOut</Link>
 
                     </>
-                    : <Link to="/signIn" className="btn text-blue-700 font-bold">SignIn</Link>
+                    : <Link to="/signIn" className="btn text-green-600 font-bold">SignIn</Link>
                 }
 
             </div>
