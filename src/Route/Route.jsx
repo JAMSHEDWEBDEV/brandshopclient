@@ -10,11 +10,13 @@ import MyCart from "../pages/MyCart/MyCart";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import PageNotFound from "../components/PageNotFound/PageNotFound";
 
 const Route = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement:<PageNotFound></PageNotFound>,
         children: [
             {
                 path: "/",
