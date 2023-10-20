@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import About from "../About/About";
 import AllCategory from "../../components/AllCategory/AllCategory";
 import { useLoaderData } from "react-router-dom";
+import FeatureProduct from "../../components/FeatureProduct/FeatureProduct";
 
 const Home = () => {
     const categories = useLoaderData();
@@ -55,6 +56,17 @@ const Home = () => {
                 </div>
             </div>
             {/* all category data end    */}
+            {/* Feature Product start  */}
+            <div>
+                <div className="text-center my-10">
+                    <p className="text-green-800 font-bold">Featured Products</p>
+                    <h1 className="text-4xl font-bold">Fresh Products Daily!</h1>
+                </div>
+                <div>
+                    <FeatureProduct></FeatureProduct>
+                </div>
+            </div>
+            {/* Feature Product end  */}
             <div className="my-24">
                 <About></About>
             </div>
