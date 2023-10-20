@@ -19,7 +19,8 @@ const UpdateProduct = () => {
         console.log(newUpdateProduct);
 
     //    send data to server 
-        fetch(`http://localhost:5000/products/${_id}`,{
+        fetch(` https://grocerry-shop-server-bqznutw8g-md-jamshed-mias-projects.verce
+l.app/products/${_id}`,{
             method: 'PUT',
             headers:{
                 'content-type':'application/json'

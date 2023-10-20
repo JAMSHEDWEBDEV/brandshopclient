@@ -35,13 +35,13 @@ const Route = createBrowserRouter([
             {
                 path:"/update/:id",
                 element:<UpdateProduct></UpdateProduct>,
-                loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+                loader:({params})=>fetch(` https://grocerry-shop-server-bqznutw8g-md-jamshed-mias-projects.vercel.app/products/${params.id}`)
 
             },
             {
                 path:"/myCart",
                 element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/products')
+                loader:()=>fetch(' https://grocerry-shop-server-bqznutw8g-md-jamshed-mias-projects.vercel.app/products')
             },
             {
                 path:"/signIn",
