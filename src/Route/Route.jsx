@@ -29,11 +29,12 @@ const Route = createBrowserRouter([
             },
             {
                 path:"/addProduct",
-                element:<AddProduct></AddProduct>
+                element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path:"/myCart",
-                element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
+                element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+                loader:()=>fetch('http://localhost:5000/products')
             },
             {
                 path:"/signIn",
