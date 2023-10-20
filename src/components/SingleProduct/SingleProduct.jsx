@@ -1,7 +1,44 @@
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const SingleProduct = ({ product }) => {
+const SingleProduct = ({ product,products,setProducts}) => {
 
-    const { name, photo, Category, Price, Rating,Description} = product || {};
+    const {_id, name, photo, Category, Price, Rating,Description} = product || {};
+
+    const handleDelete = id =>{
+        console.log('delete', id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/products/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your product has been deleted.',
+                                'success'
+                            )
+                            const remaining = products.filter(cof => cof._id !== _id)
+                            setProducts(remaining);
+                        }
+                    })
+
+            }
+        })
+
+    }
 
     return (
         <div className="card bg-base-100 shadow-xl mb-10">
@@ -13,8 +50,10 @@ const SingleProduct = ({ product }) => {
                 <p>Rating : {Rating}</p>
                 <p>Description : {Description}</p>
                 <div className="card-actions justify-between mt-10">
-                    <button className="btn bg-green-600 text-xl font-bold">Update</button>
-                    <button className="btn bg-green-600 text-xl font-bold">Delete</button>
+                    <Link to={`/update/${_id}`}><button className="btn bg-green-600 text-xl font-bold">Update</button></Link>
+                    <button
+                    onClick={()=>handleDelete(_id)} 
+                    className="btn bg-green-600 text-xl font-bold">Delete</button>
                 </div>
             </div>
         </div>

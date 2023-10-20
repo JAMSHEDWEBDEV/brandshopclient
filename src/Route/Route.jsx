@@ -11,6 +11,7 @@ import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import PageNotFound from "../components/PageNotFound/PageNotFound";
+import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 
 const Route = createBrowserRouter([
     {
@@ -30,6 +31,12 @@ const Route = createBrowserRouter([
             {
                 path:"/addProduct",
                 element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+            },
+            {
+                path:"/update/:id",
+                element:<UpdateProduct></UpdateProduct>,
+                loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+
             },
             {
                 path:"/myCart",
