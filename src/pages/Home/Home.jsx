@@ -3,8 +3,13 @@ import { MdLocalShipping, MdAddCall } from "react-icons/md";
 import { AiTwotoneLock } from "react-icons/ai";
 import Footer from "../../components/Footer/Footer";
 import About from "../About/About";
+import AllCategory from "../../components/AllCategory/AllCategory";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+    const categories = useLoaderData();
+    console.log(categories);
+
     return (
         <div>
             <Banner></Banner>
@@ -37,9 +42,19 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="mt-24">
-                <h1 className="text-6xl font-bold text-green-600 text-center">About Us</h1>
-            </div> */}
+            {/* all category data start  */}
+            <div>
+                <div className="text-center my-10">
+                    <p className="text-green-700 font-bold">100% Organic Food Provide</p>
+                    <h1 className="text-5xl font-bold">Browse All Categories</h1>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {
+                        categories.map(category => <AllCategory key={category.id} category={category}></AllCategory>)
+                    }
+                </div>
+            </div>
+            {/* all category data end    */}
             <div className="my-24">
                 <About></About>
             </div>

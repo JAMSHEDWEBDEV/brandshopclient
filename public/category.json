@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "category_name": "Vegetable",
+      "category_img": "https://i.ibb.co/hHn5HcD/vegetable.jpg"
+    },
+    {
+      "id": 2,
+      "category_name": "Fruits",
+      "category_img": "https://i.ibb.co/Gc5ynZy/fruits.jpg"
+    },
+    {
+      "id": 3,
+      "category_name": "Milk & Dairy",
+      "category_img": "https://i.ibb.co/HgCxnz2/milk.jpg"
+    },
+    {
+      "id": 4,
+      "category_name": "Coffee & Drinks",
+      "category_img": "https://i.ibb.co/s1rjZLm/coffee.jpg"
+    },
+    {
+      "id": 5,
+      "category_name": "Meat",
+      "category_img": "https://i.ibb.co/DQGHjFP/meat.jpg"
+    },
+    {
+      "id": 6,
+      "category_name": "Fresh Dessert",
+      "category_img": "https://i.ibb.co/BG3V2hG/dessert.jpg"
+    }
+  ]
+  
