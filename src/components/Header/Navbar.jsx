@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <span className="mr-3 text-black font-bold">{user.email}</span>
+                        <span className="mr-3 text-black font-bold hidden lg:block">{user.email}</span>
                         <Link to="/signIn"
                             onClick={handleLogOut}
                             className="btn text-blue-700 font-bold">SignOut</Link>

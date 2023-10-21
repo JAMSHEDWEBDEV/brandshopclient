@@ -6,6 +6,7 @@ import About from "../About/About";
 import AllCategory from "../../components/AllCategory/AllCategory";
 import { useLoaderData } from "react-router-dom";
 import FeatureProduct from "../../components/FeatureProduct/FeatureProduct";
+import Contact from "../../components/Contact/Contact";
 
 const Home = () => {
     const categories = useLoaderData();
@@ -69,6 +70,9 @@ const Home = () => {
             {/* Feature Product end  */}
             <div className="my-24">
                 <About></About>
+            </div>
+            <div>
+                <Contact></Contact>
             </div>
             <Footer></Footer>
         </div>

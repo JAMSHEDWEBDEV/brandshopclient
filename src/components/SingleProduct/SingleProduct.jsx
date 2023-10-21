@@ -18,8 +18,7 @@ const SingleProduct = ({ product,products,setProducts}) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(` https://grocerry-shop-server-bqznutw8g-md-jamshed-mias-projects.verce
-l.app/products/${_id}`, {
+                fetch(` https://grocerry-shop-server-bqznutw8g-md-jamshed-mias-projects.vercel.app/products/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

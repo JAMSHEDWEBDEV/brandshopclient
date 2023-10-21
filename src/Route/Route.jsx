@@ -12,6 +12,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import PageNotFound from "../components/PageNotFound/PageNotFound";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
+import Contact from "../components/Contact/Contact";
 
 const Route = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const Route = createBrowserRouter([
             {
                 path:"/signUp",
                 element:<SignUp></SignUp>
+            },
+            {
+                path:"/contact",
+                element:<Contact></Contact>
             }
         ]
 
